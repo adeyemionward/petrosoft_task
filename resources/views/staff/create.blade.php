@@ -43,7 +43,7 @@
                                 <input type="text" name="position" class="form-control" id="" placeholder="Position">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="submit" class="btn btn-primary">Create Staff</button>
                         </form>
                     </div>
             </div>
