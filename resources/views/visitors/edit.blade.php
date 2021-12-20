@@ -45,8 +45,12 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                       <label for="inputPassword4">Staff Name</label>
-                                        <select name="staffname" required  class="form-control" >              
+                                        <select name="staffname" required  class="form-control" >       
                                             <option>{{$data->staffname}}</option>
+                                            @foreach ($data1 as $key=> $value)
+                                                <option>{{ $value->firstname . ' '. $value->lastname  }}</option>
+                                            @endforeach          
+                                           
                                         </select>
                                     </div>
                                 </div>
@@ -60,9 +64,6 @@
                         </form>
                     </div>
             </div>
-
-               
-
         </div>
         <script src="js/jquery-3.3.1.min.js"></script>
     </body>
