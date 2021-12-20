@@ -44,6 +44,7 @@ class VisitorController extends Controller
             'staffname'=>'required|string',
 
         ]);
+
         $now = date('Y-m-d H:i:s');
         $visitor = new Visitor();
 
@@ -78,8 +79,10 @@ class VisitorController extends Controller
      */
     public function edit($id)
     {
+        $data1 = Staff::all();
+
         $data = Visitor::find($id);
-        return view('visitors.edit', compact('data'));
+        return view('visitors.edit', compact('data', 'data1'));
     }
 
     /**
@@ -92,13 +95,14 @@ class VisitorController extends Controller
     public function update(Request $request, $id)
     {
             $fields = $request->validate([
-            'firstname' => 'required|string',
-            'lastname' => 'required|string',
-            'address'=>'required|string',
-            'phone'=>'required|string',
-            'staffname'=>'required|string',
-        ]);
-             $now = date('Y-m-d H:i:s');
+                'firstname' => 'required|string',
+                'lastname' => 'required|string',
+                'address'=>'required|string',
+                'phone'=>'required|string',
+                'staffname'=>'required|string',
+            ]);
+
+            $now = gmdate('Y-m-d H:i:s');
             $data = Visitor::find($id);
             $data->firstname = request('firstname');
             $data->lastname  = request('lastname');
@@ -113,6 +117,7 @@ class VisitorController extends Controller
             
 
             $data->update();
+
             return redirect('visitors/create')
             ->with('mssg', 'Update successfully');
     }
