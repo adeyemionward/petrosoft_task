@@ -61,7 +61,7 @@
                                 <td>{{ $value->staffname }}</td>
                                 <td>{{ $value->created_at }}</td>
                                 @if($value->timeout =='')         
-                                      <td>null</td>         
+                                      <td>N/A</td>         
                                 @else
                                      <td>{{ $value->timeout }}</td>       
                                 @endif
