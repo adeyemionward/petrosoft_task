@@ -31,3 +31,4 @@ Route::put('/visitors/edit/{id}', [App\Http\Controllers\VisitorController::class
 Route::get('/staff/', [App\Http\Controllers\StaffController::class, 'index'])->name('staff.index');
 Route::get('/staff/create', [App\Http\Controllers\StaffController::class, 'create'])->name('staff.create');
 Route::post('/staff/create', [App\Http\Controllers\StaffController::class, 'store']);
+ 
