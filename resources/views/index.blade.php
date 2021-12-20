@@ -56,7 +56,7 @@
                                         
                                         <form  method="POST" action="{{ route('login') }}" class="form-box ">
                                              @csrf
-                                            <h3 class="h4 text-black mb-4">Sign Up</h3>
+                                            <h3 class="h4 text-black mb-4">Sign in</h3>
                                             <div class="form-group">
                                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
@@ -65,9 +65,9 @@
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                     @enderror
-                                                                </div>
-                                                                <div class="form-group">
-                                                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                            </div>
+                                            <div class="form-group">
+                                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                                     @error('password')
                                                         <span class="invalid-feedback" role="alert">
